@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Reverse word</title>
+
+</head>
+
+<body>
+
+    <script>
+
+function reverseWords(sentence) {
+
+    return sentence.split(" ").reverse().join(" ");
+
+}
+
+function removeDuplicates(arr) {
+
+    return [new Set(arr)];
+
+}
+
+function countVowels(str) {
+
+    const vowels = "aeiouAEIOU";
+
+    let count = 0;
+
+    for (let char of str) {
+
+        if (vowels.includes(char)) {
+
+            count++;
+
+        }
+
+    }
+
+    return count;
+
+}
+
+let sentence = "Learning JavaScript is fun";
+
+console.log("Original sentence:", sentence);
+
+console.log("Reversed words:", reverseWords(sentence));
+
+let array = [1, 2, 3, 2, 4, 1, 5];
+
+console.log("Original array:", array);
+
+console.log("Without duplicates:", removeDuplicates(array));
+
+let text = "JavaScript is powerful";
+
+console.log("Text:", text);
+
+console.log("Vowel count:", countVowels(text));
+
+</script>
+
+</body>
+
+</html>

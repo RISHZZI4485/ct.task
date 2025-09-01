@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            color: rgb(235, 6, 44);
+        }
+        button{
+            color: blue;
+        }
+        textarea{
+            color:orangered;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="inputvalue" ></textarea>
+    <button onclick="todolist()">Add Task</button>
+    <ul id="listcontent"></ul>
+    <script>
+        function todolist(){
+            let textvalue=document.getElementById("inputvalue").value.trim()
+            if (textvalue==="")
+            return;
+        let li=document.createElement("li");
+        li.textContent=textvalue;
+        document.getElementById("listcontent").appendChild(li);
+
+        let removeBtn=document.createElement("button");
+        removeBtn.textContent="remove";
+        removeBtn.addEventListener("click",function(e){
+            li.remove();
+        })
+
+        li.appendChild(removeBtn);
+        }
+    </script>
+</body>
+</html>

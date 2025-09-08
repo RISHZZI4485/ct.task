@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System</title>
+</head>
+<body>
+  <h1>Library Management System</h1>
+  <button onclick="runLibraryDemo()">Run Demo</button>
+
+  <script>
+    class Book {
+      constructor(title, author, publishedYear) {
+        this.title = title;
+        this.author = author;
+        this.publishedYear = new Date(publishedYear, 0, 1);
+      }
+
+      getSummary() {
+        return `${this.title} by ${this.author}, published in ${this.publishedYear.getFullYear()}`;
+      }
+    }
+
+    class EBook extends Book {
+      constructor(title, author, publishedYear, fileSize) {
+        super(title, author, publishedYear);
+        this.fileSize = fileSize;
+      }
+
+      getSummary() {
+        return `${super.getSummary()} [File Size: ${this.fileSize}MB]`;
+      }
+    }
+
+    function runLibraryDemo() {
+      const book1 = new Book("The Silent Spring", "Rachel Carson", 1962);
+      const book2 = new Book("Wings of Fire", "A.P.J. Abdul Kalam", 1999);
+      const ebook1 = new EBook("Digital Fortress", "Dan Brown", 1998, 2.5);
+      const ebook2 = new EBook("Zero to One", "Peter Thiel", 2014, 1.2);
+
+      console.log(book1.getSummary());
+      console.log(book2.getSummary());
+      console.log(ebook1.getSummary());
+      console.log(ebook2.getSummary());
+    }
+  </script>
+</body>
+</html>

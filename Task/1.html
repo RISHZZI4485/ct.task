@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Management Module</title>
+</head>
+<body>
+  <h1>Contact Management</h1>
+  <button onclick="showAllContacts()">Show All Contacts</button>
+
+  <script>
+    const contacts = [
+      {
+        name: "Arun",
+        phone: "9876543210",
+        email: "arun@example.com",
+        displayInfo() {
+          const { name, phone, email } = this;
+          console.log(`Name: ${name}, Phone: ${phone}, Email: ${email}`);
+        }
+      },
+      {
+        name: "Priya",
+        phone: "9123456780",
+        email: "priya@example.com",
+        displayInfo() {
+          const { name, phone, email } = this;
+          console.log(`Name: ${name}, Phone: ${phone}, Email: ${email}`);
+        }
+      }
+    ];
+
+    console.log(contacts[0].name);
+    console.log(contacts[1]["email"]);
+
+    function showAllContacts() {
+      contacts.forEach(contact => contact.displayInfo());
+    }
+
+    function addContacts(...newContacts) {
+      contacts.push(...newContacts);
+    }
+
+    addContacts(
+      {
+        name: "Karthik",
+        phone: "9001122334",
+        email: "karthik@example.com",
+        displayInfo() {
+          const { name, phone, email } = this;
+          console.log(`Name: ${name}, Phone: ${phone}, Email: ${email}`);
+        }
+      },
+      {
+        name: "Meena",
+        phone: "9011223344",
+        email: "meena@example.com",
+        displayInfo() {
+          const { name, phone, email } = this;
+          console.log(`Name: ${name}, Phone: ${phone}, Email: ${email}`);
+        }
+      }
+    );
+
+    const moreContacts = [
+      {
+        name: "Ravi",
+        phone: "9112233445",
+        email: "ravi@example.com",
+        displayInfo() {
+          const { name, phone, email } = this;
+          console.log(`Name: ${name}, Phone: ${phone}, Email: ${email}`);
+        }
+      }
+    ];
+
+    const allContacts = [...contacts, ...moreContacts];
+    allContacts.forEach(contact => contact.displayInfo());
+
+    const externalDisplay = {
+      displayInfo() {
+        const { name, phone, email } = this;
+        console.log(`(Borrowed) Name: ${name}, Phone: ${phone}, Email: ${email}`);
+      }
+    };
+
+    const borrowedContact = {
+      name: "Sneha",
+      phone: "9090909090",
+      email: "sneha@example.com"
+    };
+
+    externalDisplay.displayInfo.call(borrowedContact);
+    externalDisplay.displayInfo.apply(borrowedContact);
+    const boundDisplay = externalDisplay.displayInfo.bind(borrowedContact);
+    boundDisplay();
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DAY 13</title>
+</head>
+<body>
+    <script>
+        // try{
+        //     // code that may throw an error
+        // } catch (error){
+        //     // code to handle the error
+        // } finally{
+        //     // code that will always execute
+        // }
+
+        // try{
+        //     let atmpin=4485;
+        //     if(atmpin != 4485){
+        //         throw "incorrect pin";
+        //     }
+        //     console.log("logged in");
+        // }
+        // catch(error){
+        //     console.log("error"+error);
+        // }
+        // finally{
+        //     console.log("executed successfully");
+        // }
+        // // JSON Methods: parse(), stringify()
+        // // parse() 
+
+        // let str='{"name":"js"}';
+        // console.log(str)
+        // let strstred=JSON.parse(str);
+        // console.log(strstred);
+
+        // let obj={id:"1"};
+        // let stredopbj=JSON
+
+
+        // //fetch() function,
+        // //passing the URL of the JSON resource as the first argument
+        // //this returbs a promise that resolves to a response object.
+
+        // let sample=new Promise((resolve,reject)=>{
+        //     let workisdone=true;
+        //     if(workisdone){
+        //         console.log(("completed"))
+        //     }
+        //     else{
+        //         console.log(reject("notyet"))
+        //     }
+        // })
+
+        fetch("data.json")
+        .then(res=>res.json())
+        .then(data=>{
+            for(let detail of person){
+                console.log(details)
+            }
+        })
+    </script>
+</body>
+</html>
